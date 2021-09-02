@@ -49,6 +49,9 @@ call plug#end()
 " => deoplete
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:deoplete#enable_at_startup = 1
+inoremap <silent><expr> <Tab>
+    \ pumvisible() ? "\<C-n>" : "\<TAB>"
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => provider disabled 
@@ -66,8 +69,6 @@ let g:LanguageClient_serverCommands = {
 nmap <F5> <Plug>(lcn-menu)
 autocmd FileType rust nmap <silent> gr <Plug>(lcn-rename)
 let g:rustfmt_autosave = 1
-inoremap <silent><expr> <Tab>
-    \ pumvisible() ? "\<C-n>" : "\<TAB>"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers

@@ -2,6 +2,7 @@
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
+filetype plugin indent on
 set background=dark
 set encoding=utf8
 

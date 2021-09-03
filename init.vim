@@ -44,7 +44,15 @@ else
   	Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
+Plug 'rust-lang/rust.vim'
+Plug 'preservim/tagbar'
+
 call plug#end()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => autoopen 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType rust, TagbarToggle
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => deoplete
@@ -83,3 +91,8 @@ noremap <Right> :10winc ><CR>
 let mapleader=" "
 
 nmap <leader><CR> :Files<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => tagbar 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <F8> :TagbarToggle<CR>

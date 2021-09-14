@@ -120,6 +120,13 @@ let g:syntastic_check_on_wq = 0
 
 
 au BufNewFile,BufReadPre * if &ft == 'rs'
-nmap <leader>r :Cargo r<CR>
-nmap <leader>t :Cargo t<CR>
+nmap <leader>r :w \| Cargo r<CR>
+nmap <leader>t :w \| Cargo t<CR>
 			\endif
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => 기본 명령어 단축키 등록
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <leader>w :w<CR>
+nmap <leader>q :q<CR>

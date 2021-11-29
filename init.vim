@@ -1,4 +1,4 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+u"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
@@ -39,6 +39,9 @@ if has('nvim')
 	\ 'branch': 'next',
 	\ 'do': 'bash install.sh',
 	\ }
+	
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 
 " (Optional) Multi-entry selection UI.
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -84,6 +87,7 @@ let g:loaded_python_provider = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:LanguageClient_serverCommands = {
 \ 'rust': ['rust-analyzer'],
+\ 'go': ['gopls'],
 \ }
 nmap <F5> <Plug>(lcn-menu)
 autocmd FileType rust nmap <silent> gr <Plug>(lcn-rename)

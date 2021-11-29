@@ -53,6 +53,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'preservim/tagbar'
 Plug 'tpope/vim-pathogen'
 Plug 'vim-syntastic/syntastic'
+Plug 'preservim/nerdtree'
 
 call plug#end()
 
@@ -60,6 +61,8 @@ call plug#end()
 " => autoopen 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType rust, TagbarToggle
+autocmd VimEnter * NERDTree | wincmd p
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => deoplete

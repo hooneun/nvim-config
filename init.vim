@@ -57,6 +57,8 @@ Plug 'preservim/tagbar'
 Plug 'tpope/vim-pathogen'
 Plug 'vim-syntastic/syntastic'
 Plug 'preservim/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'arzg/vim-rust-syntax-ext'
 
 call plug#end()
 
@@ -131,6 +133,32 @@ nmap <leader>r :w \| Cargo r<CR>
 nmap <leader>t :w \| Cargo t<CR>
 			\endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => airline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 버퍼 목록 켜기
+let g:airline#extensions#tabline#enabled = 1
+" 파일명만 출력
+let g:airline#extensions#tabline#fnamemod = ':t'
+" 이 옵션은 버퍼를 수정한 직후 버퍼를 감춰지도록 한다.
+" 이 방법으로 버퍼를 사용하려면 거의 필수다.
+set hidden
+" 버퍼 새로 열기
+" 원래 이 단축키로 바인딩해 두었던 :tabnew를 대체한다.
+nmap <leader>T :enew<cr>
+
+" 다음 버퍼로 이동
+nmap <leader>l :bnext<CR>
+
+" 이전 버퍼로 이동
+nmap <leader>h :bprevious<CR>
+
+" 현재 버퍼를 닫고 이전 버퍼로 이동
+" 탭 닫기 단축키를 대체한다.
+nmap <leader>bq :bp <BAR> bd #<CR>
+
+" 모든 버퍼와 각 버퍼 상태 출력
+nmap <leader>bl :ls<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => 기본 명령어 단축키 등록

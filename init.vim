@@ -277,3 +277,12 @@ nmap <leader><CR> :Files<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader>w :w<CR>
 nmap <leader>q :q<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Rust 명령어 단축키 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+au BufNewFile,BufReadPre * if &ft == 'rs'
+nmap <leader>r :w \| RustRunnables<CR>
+"nmap <leader>t :w \| Cargo t<CR>
+			"\endif
